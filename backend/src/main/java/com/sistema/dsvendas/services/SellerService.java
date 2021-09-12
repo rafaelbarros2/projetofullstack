@@ -15,6 +15,7 @@ public class SellerService {
     @Autowired
     private SellerRepository sellerRepository;
 
+
     public List<SellerDTO> findAll(){
 
         List<Seller> result = sellerRepository.findAll();

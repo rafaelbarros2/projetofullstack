@@ -1,12 +1,18 @@
 package com.sistema.dsvendas.dtos;
 
 import com.sistema.dsvendas.entities.Seller;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
 
 
+@Getter
+@Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class SellerDTO implements Serializable {
 
     private Long id;
@@ -16,21 +22,5 @@ public class SellerDTO implements Serializable {
     public SellerDTO(Seller seller) {
         id = seller.getId();
         this.name = seller.getName();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }

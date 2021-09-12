@@ -1,10 +1,6 @@
 package com.sistema.dsvendas.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,10 +11,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.time.LocalDate;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
 @Entity
 @Table(name = "tb_sales")
 public class Sale {
@@ -29,13 +26,14 @@ public class Sale {
 
     private Integer visited;
 
-    private  Integer detail;
+    private  Integer deals;
 
     private  Double amount;
 
     private LocalDate date;
 
     @ManyToOne
-    @JoinColumn(name = "saller_id")
+    @JoinColumn(name = "seller_id")
     private Seller seller;
+
 }
